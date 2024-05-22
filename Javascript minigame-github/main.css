@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+   
+    
+}/*CSS reset*/
+body{
+  
+    margin: 0;
+    background: url('Images/nature-2568854_1920.jpg') center center fixed;
+    background-size: cover; 
+    background-repeat: no-repeat;
+  
+}
+/*Stilmall till main-h1*/
+.main-h1{
+  margin: 0;
+  padding: 0;
+  margin-top: 10%; /*tidigare 10rem*/
+  display: flex;
+  font-size: 4rem;
+ 
+  max-width: 50vw; 
+ 
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: black;
+  color: lightblue;
+  justify-content: center;
+  align-self: center;
+  box-shadow: 5px 5px 4px 5px lightblue;
+
+  
+}
+/*Hover effekt till main-h1*/
+.main-h1:hover{
+  transform: translate(-50%, -50%) scale(1.10);
+  color: lightgreen;
+  box-shadow: 7.5px 7.5px 5px 6px lightgreen;
+  
+}
+/*Stilmall till game-frame*/
+#game-frame {
+  
+  position: relative;
+  
+  width: 80%;
+  max-width: 100%; 
+  margin: 5rem auto; 
+  background-color: rgb(255, 255, 255, 0.2);
+  border: 5px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform-origin: center center; /* centrera ramen för skalning */
+  transition: transform 0.3s ease-in-out;
+  justify-self: center;
+}
+
+/* Klass för zoomeffekt på spelramen till memoryspelet */
+.zoomed {
+  transform: scale(0.5); /*här har den fått zoomeffekt 0.5*/
+}
+/*Stilmall till zoom knappen*/
+#zoom-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0; 
+}
+
+/*Stilmall till center-container*/
+.center-container {
+  margin-top: 5rem; 
+  margin-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+/*Stilmall till footer*/
+  footer {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; 
+  
+    text-align: center;
+    padding: 30px;
+    background-color: #f0f0f0; 
+    margin-top: 10rem;
+  
+    
+}
+/*Stilmall till reset-btn*/
+#reset-btn {
+  color: lightblue;
+  padding: 10px;
+  font-size: x-large;
+  background-color: black;
+  cursor: pointer; 
+  width: auto;
+  display: inline-block;
+  width: auto;
+  margin-top: 8px;
+  margin-left: 8px;
+  box-shadow: 5px 5px 4px 4px rgba(250, 250, 250, 0.7);
+}
+
+/*Hover effekt till reset-btn*/
+#reset-btn:hover{
+  color: red;
+  transform: scale(1.1);
+ 
+}
+
+/* Stilmall till audio i sidfoten */
+footer audio{
+  order: -1; /* Pusha audio knapp till vänster */
+}
+
+/*Stilmall till card-container*/
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 85%;
+    gap: 6%; /*var 5 px förut*/
+    max-width: 100%; /*Gör så att containern inte blir större än föräldrens längd */
+    margin: 0 auto; /* Centrera containern */
+   
+  
+  }
+
+ 
+  
+  /*Stilmall till random-div*/
+.random-div {
+  height: 325px;
+  width: 100%;  /*200px förut*/
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  
+
+  
+}
+.random-div:nth-last-child(){/*ger en margin-bottom till sistam random-div barnet*/
+  margin-bottom: 5rem;
+}
+
+/* Hover-effekt för random-div */
+.random-div:hover {
+  transform: scale(1.1);
+}
+
+/*Stilmall till bild i random-div*/
+.random-div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: top;
+}
+
+
+
+/*Stilmall till card-inner i random-div*/
+.random-div .card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+/* Stilmall för card-front av kortet */
+.random-div .card-inner .card-front,
+.random-div .card-inner .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilmall för card-front av kortet */
+.random-div .card-inner .card-front {
+  transform: rotateY(0deg);
+}
+
+/* Stilmall för card-back av kortet */
+.random-div .card-inner .card-back {
+  background-color: #ffd700;
+  transform: rotateY(180deg);
+  color: #333;
+}
+
+.random-div.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
